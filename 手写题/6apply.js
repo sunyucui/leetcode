@@ -46,8 +46,9 @@ Function.prototype.myApply = function (context, args) {
   context = context || window;
   const fn = Symbol();
   context[fn] = this;
-  let res = context[fn](...args);
+  let res = args?.length ? context[fn](...args) : context[fn]();
   delete context[fn];
   return res;
 }
 say.myApply(obj,['hi','ss'])
+say.myApply(obj)
