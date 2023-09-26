@@ -13,7 +13,7 @@ var canFinish = function(numCourses, prerequisites) {
 
   let queue = []; //记录所有没有先前课的 即入度为0；
   for(let i=0;i<inDegree.length;i++) {
-    if(inDegree[i] === 0) queue.push(i);
+    if(inDegree[i] === 0) queue.push(i); //i是课号 indegree是入度
   }
 
   let count = 0;

@@ -10,7 +10,7 @@ var search = function(nums, target) {
     if(nums[mid] == target) {
       return mid;
     }
-    if(nums[left] <= nums[mid]) { //有等于的可能性
+    if(nums[left] <= nums[mid]) { //有等于的可能性 忘记+1
       if(target < nums[left] || target > nums[mid] ){
         left = mid+1;
       }
