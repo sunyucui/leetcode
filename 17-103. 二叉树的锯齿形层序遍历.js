@@ -1,19 +1,37 @@
+
 var zigzagLevelOrder = function(root) {
- const ret = [];
- if(!root){
-  return ret;
- }
- let queue = [];
- queue.push(root); //左
- let goLeft = true;
- while(queue.length){
-  let currLevel = [];
-  const currsize = queue.length;
-  for(let i=0;i<currsize;i++){
-    if(goLeft){
-      currLevel.push()
-    }
+  if(!root){
+    return [];
   }
-  goLeft = !goLeft;
- }
+
+  const ans = [];
+  const queue = [root];
+  
+  let isOrderLeft = true;
+
+  while(queue.length){
+    let levelList = [];
+    const size = queue.length;
+    for(let i = 0;i<size;i++){
+      const node = queue.shift();
+
+      if(isOrderLeft){
+        levelList.push(node.val);
+      }else {
+        levelList.unshift(node.val);
+      }
+
+      if(!node.left){
+        queue.push(node.left);
+      }
+
+      if(!node.right){
+        queue.push(node.right);
+      }
+    }
+
+    ans.push(levelList);
+    isOrderLeft = !isOrderLeft;
+  }
+  return ans;
 };

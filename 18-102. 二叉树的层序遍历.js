@@ -3,8 +3,8 @@ var levelOrder = function(root) {
   if(!root) {
     return ret;
   }
-  const queue = [];
-  queue.push(root);
+  const queue = [root];
+ 
   while(queue.length){
     const currLevelSize = queue.length;
     ret.push([]);
