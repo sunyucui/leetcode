@@ -21,11 +21,11 @@ var zigzagLevelOrder = function(root) {
         levelList.unshift(node.val);
       }
 
-      if(!node.left){
+      if(node.left){
         queue.push(node.left);
       }
 
-      if(!node.right){
+      if(node.right){
         queue.push(node.right);
       }
     }
