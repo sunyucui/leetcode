@@ -11,7 +11,9 @@ var search = function(nums, target) {
     let left  = 0;
     let right = nums.length - 1;
     while( left <= right) {
-        let middle = Math.floor((left + right) / 2);
+        // 两个整型相加 可能会有值溢出的情况 转换成值相减的形式
+        // let middle = Math.floor((left + right) / 2);
+        let middle = left + Math.floor((right - left) / 2);
         if(nums[middle] == target) {
             return middle;
         }
