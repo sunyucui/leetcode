@@ -1,5 +1,5 @@
-- 基本数据类型
-  - 引用类型 object
-  - 类 function  例如Number Function Object
-
-- prototype _proto_ instance constructor??
+ 算法知识点打卡
+  - 二分查找 左闭右闭
+  - 双指针 
+    - `fast slow`
+    - `left right`
